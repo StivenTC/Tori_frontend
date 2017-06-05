@@ -4,7 +4,8 @@ import { NavController, ModalController } from 'ionic-angular';
 import { ItemCreatePage } from '../item-create/item-create';
 import { ItemDetailPage } from '../item-detail/item-detail';
 
-import { Items } from '../../providers/providers';
+//import { Items } from '../../providers/items';
+import { Items } from '../../mocks/providers/items';
 
 import { Item } from '../../models/item';
 
@@ -13,10 +14,9 @@ import { Item } from '../../models/item';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems: Item[];
-
+  currentItems: any;
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
+    this.currentItems = this.items.query( "user=1" );
   }
 
   /**

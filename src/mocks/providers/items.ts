@@ -62,7 +62,6 @@ export class Items {
     if (!params) {
       return this.items;
     }
-
     return this.items.filter((item) => {
       for (let key in params) {
         let field = item[key];

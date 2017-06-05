@@ -8,12 +8,12 @@ import { Item } from '../models/item';
 
 @Injectable()
 export class Items {
-
+  
   constructor(public http: Http, public api: Api) {
   }
 
   query(params?: any) {
-    return this.api.get('/items', params)
+    return this.api.get('/user/getCategories', params)
       .map(resp => resp.json());
   }
 
